@@ -4,7 +4,10 @@ public class GameplayInstaller : MonoInstaller
 {
     public override void InstallBindings()
     {
-        //Container.Bind<IService>().Какой-тоЧейнМетод();
-        //Container.Bind<SomeClass>().Какой-тоЧейнМетод();
+        /*
+         * 1) Если 1 интерфейс : Bind<IMyService>().To<MyService>().AsSingle();
+         * 2) Если несколько интерфейсов/может быть нужен как класс : BindInterfacesAndSelfTo<MyService>().AsSingle();
+         * 3) Для конкретных объектов, что уже созданы : BindInstance(myObject);
+         */
     }
 }

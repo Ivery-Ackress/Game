@@ -1,6 +1,7 @@
 ﻿using System;
 using Zenject;
 
+//Два вопросительных знака, под нож
 public abstract class BasePassengerModel
 {
     public int CurrentHealth { get;  set; }
