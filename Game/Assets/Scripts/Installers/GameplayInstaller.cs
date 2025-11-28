@@ -8,11 +8,12 @@ using Zenject;
  */
 public class GameplayInstaller : MonoInstaller
 {
+    [SerializeField] private GameplayEntryPoint entryPoint;
     [SerializeField] private GrannyConfig grannyConfig;
-    [SerializeField] private GrannyConfig bullyConfig;
-    [SerializeField] private GrannyConfig touristConfig;
-    [SerializeField] private GrannyConfig businessmanConfig;
-    [SerializeField] private GrannyConfig studentConfig;
+    [SerializeField] private BullyConfig bullyConfig;
+    [SerializeField] private TouristConfig touristConfig;
+    [SerializeField] private BusinessmanConfig businessmanConfig;
+    [SerializeField] private StudentConfig studentConfig;
     public override void InstallBindings()
     {
         //Создаем SO в единственном экземпляре для их прокидки
@@ -29,5 +30,6 @@ public class GameplayInstaller : MonoInstaller
         Container.Bind<BusinessmanModel>().AsTransient();
         Container.Bind<StudentModel>().AsTransient();
 
+        Container.BindInterfacesAndSelfTo<GameplayEntryPoint>().FromInstance(entryPoint).AsSingle();
     }
 }

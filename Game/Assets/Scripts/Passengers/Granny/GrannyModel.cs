@@ -15,4 +15,14 @@ public class GrannyModel : BasePassengerModel
     {
         _config = config;
     }
+
+    public int AbsorbDamage(int incomingDamage)
+    {
+        if (CurrentState != PassengerStateEnum.Active)
+            return -1;
+        //Бабулька впитывает урон до тех пор, пока не умрёт
+        var absorbed = Math.Min(incomingDamage, CurrentHealth);
+        TakeDamage(absorbed);
+        return absorbed;
+    }
 }

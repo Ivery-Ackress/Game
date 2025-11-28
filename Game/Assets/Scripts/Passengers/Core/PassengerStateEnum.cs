@@ -5,5 +5,6 @@ public enum PassengerStateEnum
 {
     Inactive,
     Active,
-    Death
+    Death,
+    Dragged
 }
