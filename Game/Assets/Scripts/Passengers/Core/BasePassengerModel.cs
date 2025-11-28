@@ -1,21 +1,21 @@
 ﻿using System;
 using Zenject;
 
-//Два вопросительных знака, под нож
+//Вынесены общие параметры сущностей в абстрактный класс, дабы не дублировать код на каждую модель
 public abstract class BasePassengerModel
 {
-    public int CurrentHealth { get;  set; }
-    public int MaxHealth { get; set; }
-    public PassengerState CurrentState { get; set; }
+    public int CurrentHealth { get; private set; }
+    public int MaxHealth { get; private set; }
+    public PassengerStateEnum CurrentState { get; private set; }
 
     public event Action<int> OnHealthChanged;
-    public event Action<PassengerState> OnStateChanged;
+    public event Action<PassengerStateEnum> StateChanged;
 
-    [Inject]
-    public void Construct(int maxHealth)
+    protected BasePassengerModel(int maxHealth)
     {
         MaxHealth = maxHealth;
         CurrentHealth = maxHealth;
+        CurrentState = PassengerStateEnum.Inactive;
     }
 
     public void TakeDamage(int amount)
@@ -25,13 +25,13 @@ public abstract class BasePassengerModel
             CurrentHealth = 0;
         OnHealthChanged?.Invoke(CurrentHealth);
         if (CurrentHealth == 0)
-            ChangeState(PassengerState.Leaving);
+            ChangeState(PassengerStateEnum.Death);
     }
 
-    protected void ChangeState(PassengerState newState)
+    protected void ChangeState(PassengerStateEnum newState)
     {
         CurrentState = newState;
-        OnStateChanged?.Invoke(newState);
+        StateChanged?.Invoke(newState);
     }
 }
 
