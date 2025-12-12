@@ -15,4 +15,5 @@ public class BusinessmanConfig : ScriptableObject
     public GameObject businessmanPrefab; //todo : префаб
     public int maxHp = 50;
     public int cost = 125;
+    public float moneyPerSecond = 0.8f;
 }

@@ -1,11 +1,13 @@
-﻿using UnityEngine;
-
-public class StudentModel : BasePassengerModel
+﻿public class StudentModel : BasePassengerModel
 {
-    private readonly StudentConfig _config;
+    public int RepairAmount { get; }
+    public float RepairCooldown { get; }
 
     public StudentModel(StudentConfig config) : base(config.maxHp)
     {
-        _config = config;
+        this.RepairCooldown = config.repairCooldown;
+        this.RepairAmount = config.repairAmount;
     }
+
+    public bool CanRepair() => CurrentState == PassengerStateEnum.Active;
 }

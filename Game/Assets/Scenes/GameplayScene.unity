@@ -377,6 +377,50 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
+--- !u!1 &792040460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 792040462}
+  - component: {fileID: 792040461}
+  m_Layer: 0
+  m_Name: GameplayEntryPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &792040461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792040460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 951ff7324bdf80f4bae4eee12e971f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &792040462
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792040460}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,11 +499,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c12fd70c53090974689d0425db2e0d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grannyConfig: {fileID: 0}
-  bullyConfig: {fileID: 0}
-  touristConfig: {fileID: 0}
-  businessmanConfig: {fileID: 0}
-  studentConfig: {fileID: 0}
+  entryPoint: {fileID: 792040461}
+  grannyConfig: {fileID: 11400000, guid: 6244c43db89a7c34f9e95ad81aaa2983, type: 2}
+  bullyConfig: {fileID: 11400000, guid: 625f9e45be43fcc409a5ae6114a5682e, type: 2}
+  touristConfig: {fileID: 11400000, guid: a019ee93cbf69b34aaf15f658c03c458, type: 2}
+  businessmanConfig: {fileID: 11400000, guid: 707e0e653d97f1849b09cd3e0e01d197, type: 2}
+  studentConfig: {fileID: 11400000, guid: d6f02edd3c241554dbcce51aa4a8ba21, type: 2}
 --- !u!4 &1185231834
 Transform:
   m_ObjectHideFlags: 0
@@ -597,7 +642,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
-  _monoInstallers: []
+  _monoInstallers:
+  - {fileID: 1185231833}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -624,3 +670,4 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 1665218787}
   - {fileID: 1185231834}
+  - {fileID: 792040462}
