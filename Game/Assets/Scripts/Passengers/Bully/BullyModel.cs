@@ -2,12 +2,14 @@
 
 public class BullyModel : BasePassengerModel
 {
-    private readonly BullyConfig _config;
+    public int AttackDamage { get; private set; }
+    public float AttackCooldown { get; private set; }
 
-    BullyModel(BullyConfig config) : base(config.maxHp)
+    public BullyModel(BullyConfig config) : base(config.maxHp)
     {
-        _config = config;
+        AttackDamage = config.attackDamage;
+        AttackCooldown = config.attackCooldown;
     }
 
-
+    public bool CanAttack() => this.CurrentState == PassengerStateEnum.Active;
 }

@@ -15,4 +15,6 @@ public class BullyConfig : ScriptableObject
     public GameObject bullyPrefab; //опять же префаб
     public int maxHp = 120;
     public int cost = 140;
+    public int attackDamage = 12;
+    public float attackCooldown = 0.5f;
 }

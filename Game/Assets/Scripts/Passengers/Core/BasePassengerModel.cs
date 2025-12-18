@@ -8,7 +8,7 @@ public abstract class BasePassengerModel
     public int MaxHealth { get; private set; }
     public PassengerStateEnum CurrentState { get; private set; }
 
-    public event Action<int> OnHealthChanged;
+    public event Action<int> HealthChanged;
     public event Action<PassengerStateEnum> StateChanged;
 
     protected BasePassengerModel(int maxHealth)
@@ -23,15 +23,18 @@ public abstract class BasePassengerModel
         CurrentHealth -= amount;
         if (CurrentHealth < 0) 
             CurrentHealth = 0;
-        OnHealthChanged?.Invoke(CurrentHealth);
+        HealthChanged?.Invoke(CurrentHealth);
         if (CurrentHealth == 0)
             ChangeState(PassengerStateEnum.Death);
     }
 
     protected void ChangeState(PassengerStateEnum newState)
     {
-        CurrentState = newState;
-        StateChanged?.Invoke(newState);
+        if (this.CurrentState != newState)
+        {
+            this.CurrentState = newState;
+            this.StateChanged?.Invoke(newState);
+        }
     }
 }
 

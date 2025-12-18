@@ -2,11 +2,10 @@
 
 public class TouristModel : BasePassengerModel
 {
-    private readonly TouristConfig _config;
+    public float DamageMultiplier { get; }
+
     public TouristModel(TouristConfig config) : base(config.maxHp)
     {
-        _config = config;
+        this.DamageMultiplier = config.damageMultiplier;
     }
-
-
 }

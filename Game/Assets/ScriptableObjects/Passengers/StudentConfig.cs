@@ -15,4 +15,8 @@ public class StudentConfig : ScriptableObject
     public GameObject studentPrefab; //найти префаб
     public int maxHp = 40;
     public int cost = 130;
+    public float repairCooldown = 10f;
+    public int repairAmount = 32;
+    public int repairStep = 4;
+    public float stepDuration = 0.5f;
 }

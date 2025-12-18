@@ -2,10 +2,9 @@
 
 public class BusinessmanModel : BasePassengerModel
 {
-    private readonly BusinessmanConfig _config;
-
+    public float MoneyPerSecond { get; }
     public BusinessmanModel(BusinessmanConfig config) : base(config.maxHp)
     {
-        _config = config;
+        MoneyPerSecond = config.moneyPerSecond;
     }
 }

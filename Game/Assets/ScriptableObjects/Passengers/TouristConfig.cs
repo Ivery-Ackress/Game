@@ -15,4 +15,5 @@ public class TouristConfig : ScriptableObject
     public GameObject touristPrefab; //найти префаб
     public int maxHp = 100;
     public int cost = 150;
+    public float damageMultiplier = 1.5f;
 }
