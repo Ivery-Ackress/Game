@@ -9,6 +9,7 @@ using Zenject;
  * Сцены работают независимо друг от друга. Для общей инициализации следует использовать Zenject, далее вызывать нужные методы
  */
 
+//TODO: Бесполезно, пускаем под нож
 public class BootstrapEntryPoint : MonoBehaviour
 {
     //IEnumerator Start()

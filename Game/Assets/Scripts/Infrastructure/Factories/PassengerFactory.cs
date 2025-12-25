@@ -36,27 +36,27 @@ public class PassengerFactory
         //Создаем модель через Zenject контейнер
         BasePassengerModel model = config switch
         {
-            GrannyConfig grannyConfig => this.container.Instantiate<GrannyModel>(new object[] { grannyConfig }),
-            StudentConfig studentConfig => this.container.Instantiate<StudentModel>(new object[] { studentConfig }),
-            BusinessmanConfig businessmanConfig => this.container.Instantiate<BusinessmanModel>(new object[] { businessmanConfig }),
-            BullyConfig bullyConfig => this.container.Instantiate<BullyModel>(new object[] { bullyConfig }),
-            TouristConfig touristConfig => this.container.Instantiate<TouristModel>(new object[] { touristConfig }),
+            GrannyConfig grannyConfig => container.Instantiate<GrannyModel>(new object[] { grannyConfig }),
+            StudentConfig studentConfig => container.Instantiate<StudentModel>(new object[] { studentConfig }),
+            BusinessmanConfig businessmanConfig => container.Instantiate<BusinessmanModel>(new object[] { businessmanConfig }),
+            BullyConfig bullyConfig => container.Instantiate<BullyModel>(new object[] { bullyConfig }),
+            TouristConfig touristConfig => container.Instantiate<TouristModel>(new object[] { touristConfig }),
             _ => throw new System.ArgumentException($"Неизвестный тип конфига: {config.GetType()}")
         };
 
         //Выбираем префаб по типу конфига
         GameObject prefab = config switch
         {
-            GrannyConfig => this.grannyPrefab,
-            StudentConfig => this.studentPrefab,
-            BusinessmanConfig => this.businessmanPrefab,
-            BullyConfig => this.bullyPrefab,
-            TouristConfig => this.touristPrefab,
+            GrannyConfig => grannyPrefab,
+            StudentConfig => studentPrefab,
+            BusinessmanConfig => businessmanPrefab,
+            BullyConfig => bullyPrefab,
+            TouristConfig => touristPrefab,
             _ => throw new System.ArgumentException($"Неизвестный тип конфига: {config.GetType()}")
         };
 
         // Создаем GameObject из префаба
-        GameObject viewObject = this.container.InstantiatePrefab(prefab, this.spawnParent);
+        GameObject viewObject = container.InstantiatePrefab(prefab, spawnParent);
         // var view = viewObject.GetComponent<BasePassengerView>();
         // view?.Initialize(model);
         return model;
