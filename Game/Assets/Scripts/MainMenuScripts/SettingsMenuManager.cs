@@ -29,11 +29,8 @@ public class SettingsMenuManager : MonoBehaviour
     {
         savePath = Path.Combine(Application.dataPath, "Json files", "settings.json");
         defaultSettingsPath = Path.Combine(Application.dataPath, "Json files", "defaultSettings.json");
-
         CreateResolutions();
-
         LoadSettings();
-
         ApplyLoadedSettingsInUI();
         ApplyLoadedSettingsInSystem();
     }
@@ -99,7 +96,6 @@ public class SettingsMenuManager : MonoBehaviour
         audioMixer.SetFloat("SoundsVolume", Mathf.Log10(settings.soundsVolume) * 20);
         QualitySettings.SetQualityLevel(settings.qualityIndex);
         Screen.fullScreen = settings.isFullScreen;
-
         var resolution = resolutions[settings.resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, settings.isFullScreen);
     }
@@ -107,10 +103,8 @@ public class SettingsMenuManager : MonoBehaviour
     private void CreateResolutions()
     {
         resolutionDropdown.ClearOptions();
-
         resolutions = Screen.resolutions;
         var currentResolutionIndex = 0;
-
         resolutionDropdown.AddOptions(
             resolutions
             .Select((resolution, resolutionIndex) =>
@@ -134,14 +128,12 @@ public class SettingsMenuManager : MonoBehaviour
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
-
         settings.qualityIndex = qualityIndex;
     }
 
     public void SetFullScreen(bool isFullScreen)
     {
         Screen.fullScreen = isFullScreen;
-
         settings.isFullScreen = isFullScreen;
     }
 
@@ -149,21 +141,18 @@ public class SettingsMenuManager : MonoBehaviour
     {
         var resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-
         settings.resolutionIndex = resolutionIndex;
     }
 
     public void SetMusicVolume(float volume)
     {
         audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
-
         settings.musicVolume = volume;
     }
 
     public void SetSoundsVolume(float volume)
     {
         audioMixer.SetFloat("SoundsVolume", Mathf.Log10(volume) * 20);
-
         settings.soundsVolume = volume;
     }
 
@@ -173,9 +162,7 @@ public class SettingsMenuManager : MonoBehaviour
         {
             var json = File.ReadAllText(defaultSettingsPath);
             var defaultSettings = JsonUtility.FromJson<GameSettings>(json);
-
             settings = defaultSettings;
-
             ApplyLoadedSettingsInUI();
             ApplyLoadedSettingsInSystem();
         }
