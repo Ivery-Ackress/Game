@@ -9,18 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12d1f4eb0aa839a43ad05b79d56fdb71, type: 3}
+  m_Script: {fileID: 11500000, guid: 2132e4a62548a124188d33663f576736, type: 3}
   m_Name: GrannyConfig
   m_EditorClassIdentifier: 
-  grannyName: "\u0411\u0430\u0431\u043A\u0430-\u0431\u0440\u043E\u043D\u044F"
-  grannyFunction: "\u041F\u043E\u0433\u043B\u043E\u0449\u0430\u0435\u0442 \u0443\u0440\u043E\u043D
-    \u043F\u043E \u0431\u043E\u0440\u0442\u0443, \u0440\u044F\u0434\u043E\u043C \u0441
-    \u043A\u043E\u0442\u043E\u0440\u044B\u043C \u0441\u0438\u0434\u0438\u0442"
-  grannyPlacement: "\u0423 \u043E\u043A\u043D\u0430 \u043D\u0430 \u0441\u0432\u043E\u0435\u043C
-    \u0441\u0438\u0434\u0435\u043D\u044C\u0435"
-  grannyDeath: "\u0412\u044B\u0445\u043E\u0434\u0438\u0442 \u0438\u0437 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u0430
-    \u0441 \u0440\u0443\u0433\u0430\u043D\u044C\u044E"
-  grannySprite: {fileID: 0}
-  grannyPrefab: {fileID: 0}
-  maxHp: 200
-  cost: 200
+  passengerName: 
+  passengerFunction: 
+  passengerPlacement: 
+  passengerDeath: 
+  passengerSprite: {fileID: 0}
+  passengerMaxHp: 0
+  passengerCost: 0
+  absorptionRate: 0.25

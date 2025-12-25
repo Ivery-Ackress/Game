@@ -15,7 +15,7 @@ public class HubCanvasManager : MonoBehaviour
     [SerializeField] private TMP_Text busCost;
     [SerializeField] private TMP_Text busDescription;
     [SerializeField] private Button nextBusButton;
-    [SerializeField] private List<LevelTwoConfig> buses;
+    [SerializeField] private List<BusConfig> buses;
 
     private int currentBusIndex = 0;
     private GameObject currentBus;

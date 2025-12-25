@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "LevelTwoConfig", menuName = "Scriptable Objects/LevelTwoConfig")]
-public class LevelTwoConfig : ScriptableObject
+[CreateAssetMenu(fileName = "NewBus", menuName = "Scriptable Objects/NewBus")]
+public class BusConfig : ScriptableObject
 {
     //В будущем придется менять string на localizedstring, но пока для наглядности так.
     [Header("Элементы для UI")]
