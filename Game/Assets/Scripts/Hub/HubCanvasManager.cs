@@ -19,7 +19,7 @@ public class HubCanvasManager : MonoBehaviour
 
     private int currentBusIndex = 0;
     private GameObject currentBus;
-
+    
     public int Coins
     {
         get
