@@ -28,6 +28,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Hub",
+            "id": "f201ba7e-9ae0-40af-b6c8-ab04a97107fb",
+            "actions": [
+                {
+                    "name": "RotatePlatformLeft",
+                    "type": "Button",
+                    "id": "954bc02c-043b-4075-a81f-0aa57d1734ff",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RotatePlatformRight",
+                    "type": "Button",
+                    "id": "33ec94a0-d8cd-4a11-a5e8-d3d66af6557c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7e801d34-4a38-44c3-ba50-0fd96e704ef2",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotatePlatformLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bf5cd571-bc19-4645-a330-eace838a6e72",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotatePlatformRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
