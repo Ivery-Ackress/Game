@@ -496,15 +496,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1185231832}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c12fd70c53090974689d0425db2e0d88, type: 3}
+  m_Script: {fileID: 11500000, guid: c5ea040140615f143b6543c2c3a3d3e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   entryPoint: {fileID: 792040461}
-  grannyConfig: {fileID: 11400000, guid: 6244c43db89a7c34f9e95ad81aaa2983, type: 2}
-  bullyConfig: {fileID: 11400000, guid: 625f9e45be43fcc409a5ae6114a5682e, type: 2}
-  touristConfig: {fileID: 11400000, guid: a019ee93cbf69b34aaf15f658c03c458, type: 2}
-  businessmanConfig: {fileID: 11400000, guid: 707e0e653d97f1849b09cd3e0e01d197, type: 2}
-  studentConfig: {fileID: 11400000, guid: d6f02edd3c241554dbcce51aa4a8ba21, type: 2}
+  passengersRoot: {fileID: 1665218787}
+  grannyConfig: {fileID: 11400000, guid: 36ff0a85402aff740aee3f5f72e631b7, type: 2}
+  bullyConfig: {fileID: 11400000, guid: 27930229d253eda4c99b3dc70771445e, type: 2}
+  touristConfig: {fileID: 11400000, guid: 4f4d8c82f31ecdf4db334a682c76845f, type: 2}
+  businessmanConfig: {fileID: 11400000, guid: 38a2244db425b6f4faa3dc2512819cd0, type: 2}
+  studentConfig: {fileID: 11400000, guid: 70099b5498a3e924382de9adaf06eba7, type: 2}
+  studentPrefab: {fileID: 0}
+  bullyPrefab: {fileID: 0}
+  grannyPrefab: {fileID: 0}
+  businessmanPrefab: {fileID: 0}
+  touristPrefab: {fileID: 0}
 --- !u!4 &1185231834
 Transform:
   m_ObjectHideFlags: 0
@@ -534,7 +540,7 @@ GameObject:
   - component: {fileID: 1665218784}
   - component: {fileID: 1665218788}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: SceneContext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

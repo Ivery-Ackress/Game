@@ -9,16 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a372d33bb152a65438b12a07fd411844, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d3a36f0cb2156441992b9ce387b7961, type: 3}
   m_Name: StudentConfig
   m_EditorClassIdentifier: 
-  studentName: "\u0421\u0442\u0443\u0434\u0435\u043D\u0442-\u0440\u0435\u043C\u043E\u043D\u0442\u043D\u0438\u043A"
-  studentFunction: "\u041C\u0435\u0434\u043B\u0435\u043D\u043D\u043E \u0432\u043E\u0441\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0435\u0442
-    \u043F\u0440\u043E\u0447\u043D\u043E\u0441\u0442\u044C \u043A\u043E\u0440\u043F\u0443\u0441\u0430"
-  studentPlacement: "\u0412 \u043F\u0440\u043E\u0445\u043E\u0434\u0435, \u0441 \u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u0430\u043C\u0438"
-  studentDeath: "\u041F\u044C\u0435\u0442 \u044D\u043D\u0435\u0440\u0433\u0435\u0442\u0438\u043A
-    \u0438 \u043B\u043E\u0432\u0438\u0442 \u0438\u043D\u0444\u0430\u0440\u043A\u0442"
-  studentSprite: {fileID: 0}
-  studentPrefab: {fileID: 0}
-  maxHp: 40
-  cost: 130
+  passengerName: 
+  passengerFunction: 
+  passengerPlacement: 
+  passengerDeath: 
+  passengerSprite: {fileID: 0}
+  passengerMaxHp: 0
+  passengerCost: 0
+  repairCooldown: 10
+  repairAmount: 30
+  repairStep: 3
+  stepDuration: 0.5

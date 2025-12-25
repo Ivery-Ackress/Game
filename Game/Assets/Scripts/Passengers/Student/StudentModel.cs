@@ -3,7 +3,7 @@
     public int RepairAmount { get; }
     public float RepairCooldown { get; }
 
-    public StudentModel(StudentConfig config) : base(config.maxHp)
+    public StudentModel(StudentConfig config) : base(config.passengerMaxHp)
     {
         this.RepairCooldown = config.repairCooldown;
         this.RepairAmount = config.repairAmount;

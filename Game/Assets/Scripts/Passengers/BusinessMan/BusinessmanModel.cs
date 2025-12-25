@@ -3,7 +3,7 @@
 public class BusinessmanModel : BasePassengerModel
 {
     public float MoneyPerSecond { get; }
-    public BusinessmanModel(BusinessmanConfig config) : base(config.maxHp)
+    public BusinessmanModel(BusinessmanConfig config) : base(config.passengerMaxHp)
     {
         MoneyPerSecond = config.moneyPerSecond;
     }
