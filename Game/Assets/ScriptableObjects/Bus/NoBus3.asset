@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb47adf708de9a4e97406630a8ee885, type: 3}
   m_Name: NoBus3
   m_EditorClassIdentifier: 
-  description: 
+  description: sgjtkusfgbhketsfg
   icon: {fileID: 0}
-  prefab: {fileID: 0}
-  priceToUnlock: 0
+  prefab: {fileID: 8358584075898070292, guid: c53d8b0593f0de941a09acf974f81f23, type: 3}
+  priceToUnlock: 100000
   leftFlankHp: 0
   rightFlankHp: 0
   seatsQuantity: 0
