@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02f071510ece08439b2b5f4ea178780, type: 3}
+  m_Name: BullyConfig
+  m_EditorClassIdentifier: 
+  passengerName: Bully
+  passengerFunction: "\u0439\u0446\u0443\u0435\u043A\u0446\u0439\u0435"
+  passengerPlacement: "\u0446\u0439\u0443\u043A"
+  passengerDeath: "\u0446\u0439\u0443\u043A"
+  passengerSprite: {fileID: 0}
+  passengerMaxHp: 0
+  passengerCost: 15
+  costMarkup: 1.4
+  passengerDescription: More Damage
+  attackDamage: 0
+  attackCooldown: 0

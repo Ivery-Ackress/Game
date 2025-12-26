@@ -5,5 +5,12 @@ public class GrannyConfig : BasePassengerConfig
 {
     [Tooltip("Коэффицент впитываемого урона")]
     [Range(0.25f, 0.75f)]
-    public float absorptionRate;
+    [SerializeField] private float absorptionRate;
+
+    public float AbsorptionRate => absorptionRate;
+
+    public float GetUpgradeAbsorptionRate(int currentLevel)
+    {
+        return absorptionRate * currentLevel;
+    }
 }

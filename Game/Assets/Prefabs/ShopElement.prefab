@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 4193538673000003906}
   - component: {fileID: 7440193802569923557}
   m_Layer: 5
-  m_Name: Sprite
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -402,7 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: {fileID: 5250031365284499545}
   description: {fileID: 4708551322357658971}
-  sprite: {fileID: 7440193802569923557}
+  image: {fileID: 7440193802569923557}
   cost: {fileID: 555329590125063934}
   button: {fileID: 9158668739139578221}
 --- !u!114 &-311393912995794129

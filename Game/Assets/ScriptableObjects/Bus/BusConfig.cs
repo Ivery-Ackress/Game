@@ -16,9 +16,6 @@ public class BusConfig : ScriptableObject
     [SerializeField] private int seatsQuantity;
     [SerializeField] private bool hasCannon;
 
-    [Header("Для магазина")]
-    [SerializeField] private bool isAlreadyBuying;
-
     
     public string Description => description;
     public Sprite Icon => icon;
@@ -28,10 +25,4 @@ public class BusConfig : ScriptableObject
     public int RightFlankHp => rightFlankHp;
     public int SeatsQuantity => seatsQuantity;
     public bool HasCannon => hasCannon;
-    
-    public bool IsAlreadyBuying
-    {
-        get => isAlreadyBuying;
-        set => isAlreadyBuying = value;
-    }
 }

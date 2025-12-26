@@ -4,5 +4,12 @@
 public class TouristConfig : BasePassengerConfig
 {
     [Range(1.1f, 1.7f)]
-    public float damageMultiplier;
+    [SerializeField] private float damageMultiplier;
+    
+    public float DamageMultiplier => damageMultiplier;
+
+    public float GetUpgradeDamageMultiplier(int currentLevel)
+    {
+        return damageMultiplier * currentLevel;
+    }
 }

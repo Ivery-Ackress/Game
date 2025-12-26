@@ -4,8 +4,8 @@ public class TouristModel : BasePassengerModel
 {
     public float DamageMultiplier { get; }
 
-    public TouristModel(TouristConfig config) : base(config.passengerMaxHp)
+    public TouristModel(TouristConfig config) : base(config.PassengerMaxHp)
     {
-        this.DamageMultiplier = config.damageMultiplier;
+        this.DamageMultiplier = config.DamageMultiplier;
     }
 }

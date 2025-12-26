@@ -3,5 +3,12 @@
 [CreateAssetMenu(fileName = "BusinessmanConfig", menuName = "Scriptable Objects/BusinessmanConfig")]
 public class BusinessmanConfig :  BasePassengerConfig
 {
-    public float moneyPerSecond;
+    [SerializeField] private float moneyPerSecond;
+
+    public float MoneyPerSecond => moneyPerSecond;
+
+    public float GetUpgradeMoneyPerSecond(int currentLevel)
+    {
+        return moneyPerSecond * currentLevel;
+    }
 }

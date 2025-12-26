@@ -15,7 +15,7 @@ public class HubCanvasManager : MonoBehaviour
     [SerializeField] private TMP_Text busCost;
     [SerializeField] private TMP_Text busDescription;
     [SerializeField] private Button nextBusButton;
-    [SerializeField] private List<BusConfig> buses;
+    [SerializeField] private List<BusBuyingManager> buses;
 
     private int currentBusIndex = 0;
     private GameObject currentBus;
@@ -49,12 +49,12 @@ public class HubCanvasManager : MonoBehaviour
         nextBusButton.gameObject.SetActive(currentBusIndex != buses.Count - 1);
 
         buyBusButton.gameObject.SetActive(!buses[currentBusIndex].IsAlreadyBuying);
-        busCost.text = $"Buy: {buses[currentBusIndex].PriceToUnlock}";
+        busCost.text = $"Buy: {buses[currentBusIndex].Bus.PriceToUnlock}";
         
-        busDescription.text = buses[currentBusIndex].Description;
+        busDescription.text = buses[currentBusIndex].Bus.Description;
 
         currentBus = Instantiate(
-            buses[currentBusIndex].Prefab,
+            buses[currentBusIndex].Bus.Prefab,
             busSpawnPoint.position,
             busSpawnPoint.rotation
         );
@@ -74,10 +74,10 @@ public class HubCanvasManager : MonoBehaviour
 
     public void BuyBus()
     {
-        if (buses[currentBusIndex].PriceToUnlock <= Coins)
+        if (buses[currentBusIndex].Bus.PriceToUnlock <= Coins)
         {
             buses[currentBusIndex].IsAlreadyBuying = true;
-            Coins -= buses[currentBusIndex].PriceToUnlock;
+            Coins -= buses[currentBusIndex].Bus.PriceToUnlock;
             UpdateBusSection();
         }
     }

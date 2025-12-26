@@ -10,7 +10,7 @@ public class GrannyModel : BasePassengerModel
      * В base передается хп с нашего конфига, который прокидывает в дочерний конструктор за нас zenject.
      */
 
-    public GrannyModel(GrannyConfig config) : base(config.passengerMaxHp)
+    public GrannyModel(GrannyConfig config) : base(config.PassengerMaxHp)
     {
     }
 }

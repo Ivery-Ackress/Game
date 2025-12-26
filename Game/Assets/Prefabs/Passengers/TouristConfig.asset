@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e6d952f7bdd124a8046f4d9dcaeccd, type: 3}
+  m_Name: TouristConfig
+  m_EditorClassIdentifier: 
+  passengerName: Tourist
+  passengerFunction: 
+  passengerPlacement: 
+  passengerDeath: 
+  passengerSprite: {fileID: 0}
+  passengerMaxHp: 0
+  passengerCost: 15
+  costMarkup: 1.7
+  passengerDescription: I don't know
+  damageMultiplier: 1.1

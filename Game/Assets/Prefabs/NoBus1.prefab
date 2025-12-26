@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 838637824201567561}
   - component: {fileID: 767974603235707644}
   - component: {fileID: 4527482841890094302}
+  - component: {fileID: 5075056036151199810}
   m_Layer: 0
   m_Name: NoBus1
   m_TagString: Untagged
@@ -136,3 +137,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5075056036151199810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3972801622079756803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27223ca9da10ded499aa61fe9798d9ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bus: {fileID: 0}
+  isAlreadyBuying: 0

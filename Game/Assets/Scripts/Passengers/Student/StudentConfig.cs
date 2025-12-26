@@ -4,11 +4,24 @@
 public class StudentConfig : BasePassengerConfig
 {
     [Range(10f, 20f)]
-    public float repairCooldown;
+    [SerializeField] private float repairCooldown;
+
     [Range(30, 50)]
-    public int repairAmount;
+    [SerializeField] private int repairAmount;
+    
     [Range(3, 6)]
-    public int repairStep;
+    [SerializeField] private int repairStep;
+    
     [Range(0.5f,1.5f)]
-    public float stepDuration;
+    [SerializeField] private float stepDuration;
+
+    public float RepairCooldown => repairCooldown;
+    public int RepairAmount => repairAmount;
+    public int RepairStep => repairStep;
+    public float StepDuration => stepDuration;
+    
+    public float GetUpgradeSomething(int currentLevel)
+    {
+        return repairCooldown * currentLevel;
+    }
 }
