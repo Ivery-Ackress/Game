@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartNewGame()
     {
-        Debug.Log("Start");
+        SceneManager.LoadScene("Hub");
     }
     public void OpenContinuePanel()
     {
