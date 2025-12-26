@@ -15,7 +15,7 @@ public class StorageService : IStorageService
     public T Load<T>(string key)
     {
         var path = BuildPath(key);
-        try 
+        try
         {
             using (var fileStream = new StreamReader(path))
             {

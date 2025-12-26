@@ -1,4 +1,5 @@
-﻿using Zenject;
+﻿using System.Runtime.CompilerServices;
+using Zenject;
 
 /*
  * По традиции пишу объяснение (как понял) в 1ом файле, в будущем отшлифуем и вынесем все в отдельную псевдо-документацию
@@ -15,12 +16,24 @@ public class ProjectInstaller : MonoInstaller
 {
     public override void InstallBindings()
     {
-        // Сервисы (порядок важен — SaveLoadService первый)
-       // Container.Bind<SaveLoadService>().AsSingle();
-       // Container.Bind<GameSessionService>().AsSingle();
-        //Container.Bind<CurrencyService>().AsSingle();
+        BindStorage();
+        BindSaveData();
+        //modules
+        //LoadManager
+        //GameServices
+    }
 
-        // Инициализатор (загрузит сохранения при старте) - точка входа в сам проект по сути
-       // Container.BindInterfacesTo<GameInitializer>().AsSingle();
+    private void BindSaveData()
+    {
+        Container.Bind<BusesSaveData>().AsSingle();
+        Container.Bind<CurrencySaveData>().AsSingle();
+        Container.Bind<PassengerSaveData>().AsSingle();
+        Container.Bind<ProgressSaveData>().AsSingle();
+        Container.Bind<GameSaveData>().AsSingle();
+    }
+
+    private void BindStorage()
+    {
+        Container.Bind<IStorageService>().To<StorageService>().AsSingle();
     }
 }
