@@ -470,6 +470,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1085662198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1085662200}
+  - component: {fileID: 1085662199}
+  m_Layer: 0
+  m_Name: LevelGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1085662199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085662198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c93867ebdcddf7a429b8a94299b2f042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  straightRoad: {fileID: 1768595404195013848, guid: c4792772fac719e4b8278ada0f6657db, type: 3}
+  turnLeftRoad: {fileID: 7346420894907710474, guid: 48ad6309768d8fc4ba0ee53d51373637, type: 3}
+  turnRightRoad: {fileID: 8129625008496799053, guid: a621d4c590bed044585faf50b0087ca3, type: 3}
+  crossRoad: {fileID: 8811036031993484068, guid: c5c98da3001d76e4484e5634a37dc2bf, type: 3}
+  segmentsCount: 10
+--- !u!4 &1085662200
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085662198}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.4491, y: 0, z: -4.69894}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1185231832
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,3 +726,4 @@ SceneRoots:
   - {fileID: 1665218787}
   - {fileID: 1185231834}
   - {fileID: 792040462}
+  - {fileID: 1085662200}
