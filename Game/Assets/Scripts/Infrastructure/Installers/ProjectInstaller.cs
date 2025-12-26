@@ -27,7 +27,7 @@ public class ProjectInstaller : MonoInstaller
     {
         Container.Bind<BusesSaveData>().AsSingle();
         Container.Bind<CurrencySaveData>().AsSingle();
-        Container.Bind<PassengerSaveData>().AsSingle();
+        Container.Bind<PassengersSaveData>().AsSingle();
         Container.Bind<ProgressSaveData>().AsSingle();
         Container.Bind<GameSaveData>().AsSingle();
     }
