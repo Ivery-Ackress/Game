@@ -2,27 +2,24 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 public class TraderPanelManager : MonoBehaviour
 {
     [SerializeField] private GameObject traderPanel;
     [SerializeField] private GameObject shopElementPrefab;
     [SerializeField] private Transform container;
-    [SerializeField] private List<PassengerUpgadeManager> passengers;
+    [SerializeField] private List<PassengerUpgradeManager> passengers;
     [SerializeField] private TMP_Text coinsCount;
 
-    public int Coins
+    private CurrencyModel currencyModel;
+    private CurrencyController currencyController;
+
+    [Inject]
+    public void Construct(CurrencyModel currencyModel, CurrencyController currencyController)
     {
-        get
-        {
-            if (int.TryParse(coinsCount.text, out int result))
-                return result;
-            return 0;
-        }
-        private set
-        {
-            coinsCount.text = value.ToString();
-        }
+        this.currencyModel = currencyModel;
+        this.currencyController = currencyController;
     }
 
     public void CloseAndSave()
@@ -33,8 +30,19 @@ public class TraderPanelManager : MonoBehaviour
 
     public void Start()
     {
+        currencyModel.OnCoinsChanged += UpdateCoinsUI;
+        UpdateCoinsUI(currencyModel.Coins);
         CreateShopElements();
-        
+    }
+
+    private void OnDestroy()
+    {
+        currencyModel.OnCoinsChanged -= UpdateCoinsUI;
+    }
+
+    private void UpdateCoinsUI(int coins)
+    {
+        coinsCount.text = coins.ToString();
     }
 
     private void CreateShopElements()
@@ -56,17 +64,16 @@ public class TraderPanelManager : MonoBehaviour
             });
         }
     }
-    private void Upgrade(ShopElement element, PassengerUpgadeManager passenger)
+    private void Upgrade(ShopElement element, PassengerUpgradeManager passenger)
     {
-        if (passenger.PassengerConfig.GetUpgradeCost(passenger.Level) <= Coins)
+        if (currencyController.TrySpend(passenger.PassengerConfig.GetUpgradeCost(passenger.Level)))
         {
-            Coins -= passenger.PassengerConfig.GetUpgradeCost(passenger.Level);
             passenger.Level++;
             UpdateShopElement(element, passenger);
         }
     }
 
-    private void UpdateShopElement(ShopElement element, PassengerUpgadeManager passenger)
+    private void UpdateShopElement(ShopElement element, PassengerUpgradeManager passenger)
     {
         element.cost.text = $"{passenger.PassengerConfig.GetUpgradeCost(passenger.Level)}";
         element.image.sprite = passenger.PassengerConfig.PassengerSprite;

@@ -2,6 +2,9 @@
 
 public class BasePassengerConfig : ScriptableObject
 {
+    [Header("Идентификация")]
+    [SerializeField] PassengerType passengerType;
+
     [Header("Элементы для UI")]
     [SerializeField] private string passengerName;
     [SerializeField] private string passengerFunction;
@@ -17,6 +20,7 @@ public class BasePassengerConfig : ScriptableObject
     [SerializeField] private float costMarkup;
     [SerializeField] private string passengerDescription;
 
+    public PassengerType PassengerType => passengerType;
     public string PassengerName => passengerName;
     public string PassengerFunction => passengerFunction;
     public string PassengerPlacement => passengerPlacement;

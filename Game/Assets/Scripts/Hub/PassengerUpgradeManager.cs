@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PassengerUpgadeManager : MonoBehaviour
+public class PassengerUpgradeManager : MonoBehaviour
 {
     [SerializeField] private BasePassengerConfig passengerConfig;
     [SerializeField] private int level;

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d3a36f0cb2156441992b9ce387b7961, type: 3}
   m_Name: StudentConfig
   m_EditorClassIdentifier: 
+  passengerType: 4
   passengerName: 
   passengerFunction: 
   passengerPlacement: 
@@ -19,6 +20,8 @@ MonoBehaviour:
   passengerSprite: {fileID: 0}
   passengerMaxHp: 0
   passengerCost: 0
+  costMarkup: 0
+  passengerDescription: 
   repairCooldown: 10
   repairAmount: 30
   repairStep: 3

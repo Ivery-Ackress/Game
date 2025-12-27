@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
+using Zenject;
 
 public class HubCanvasManager : MonoBehaviour
 {
@@ -17,26 +19,34 @@ public class HubCanvasManager : MonoBehaviour
     [SerializeField] private Button nextBusButton;
     [SerializeField] private List<BusBuyingManager> buses;
 
-    private int currentBusIndex = 0;
+    [SerializeField] private int currentBusIndex = 0;
     private GameObject currentBus;
-    
-    public int Coins
+
+    private CurrencyModel currencyModel;
+    private CurrencyController currencyController;
+
+    [Inject]
+    public void Construct(CurrencyModel currencyModel, CurrencyController currencyController)
     {
-        get
-        {
-            if (int.TryParse(coinsCount.text, out int result))
-                return result;
-            return 0;
-        }
-        private set
-        {
-            coinsCount.text = value.ToString();
-        }
+        this.currencyModel = currencyModel;
+        this.currencyController = currencyController;
     }
 
     private void Start()
     {
+        currencyModel.OnCoinsChanged += UpdateCoinsUI;
+        UpdateCoinsUI(currencyModel.Coins);
         UpdateBusSection();
+    }
+
+    private void OnDestroy()
+    {
+        currencyModel.OnCoinsChanged -= UpdateCoinsUI;
+    }
+
+    private void UpdateCoinsUI(int coins)
+    {
+        coinsCount.text = coins.ToString();
     }
 
     private void UpdateBusSection()
@@ -74,10 +84,9 @@ public class HubCanvasManager : MonoBehaviour
 
     public void BuyBus()
     {
-        if (buses[currentBusIndex].Bus.PriceToUnlock <= Coins)
+        if (currencyController.TrySpend(buses[currentBusIndex].Bus.PriceToUnlock))
         {
             buses[currentBusIndex].IsAlreadyBuying = true;
-            Coins -= buses[currentBusIndex].Bus.PriceToUnlock;
             UpdateBusSection();
         }
     }

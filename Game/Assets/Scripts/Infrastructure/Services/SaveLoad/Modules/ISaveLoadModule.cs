@@ -2,6 +2,6 @@
 
 public interface ISaveLoadModule
 {
-    void Fill(GameSaveData data); //композиция
-    void Apply(GameSaveData data); //декомпозиция
+    void Get(GameSaveData data); //композиция
+    void Set(GameSaveData data); //декомпозиция
 }

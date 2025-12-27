@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2132e4a62548a124188d33663f576736, type: 3}
   m_Name: GrannyConfig
   m_EditorClassIdentifier: 
+  passengerType: 3
   passengerName: 
   passengerFunction: 
   passengerPlacement: 
@@ -19,4 +20,6 @@ MonoBehaviour:
   passengerSprite: {fileID: 0}
   passengerMaxHp: 0
   passengerCost: 0
+  costMarkup: 0
+  passengerDescription: 
   absorptionRate: 0.25

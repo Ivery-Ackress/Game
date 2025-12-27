@@ -4,6 +4,7 @@ using Zenject;
 //Вынесены общие параметры сущностей в абстрактный класс, дабы не дублировать код на каждую модель
 public abstract class BasePassengerModel
 {
+    public PassengerType PassengerType;
     public int CurrentHealth { get; private set; }
     public int MaxHealth { get; private set; }
     public PassengerStateEnum CurrentState { get; private set; }

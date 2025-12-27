@@ -25,7 +25,7 @@ public class StorageService : IStorageService
         }
         catch (System.Exception e)
         {
-            Debug.LogError($"[Storage] Load failed ({key}): {e.Message}");
+            Debug.LogError(e.Message);
             return default(T);
         }
     }
